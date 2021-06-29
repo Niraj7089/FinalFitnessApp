@@ -23,6 +23,20 @@ class Homepage extends StatefulWidget {
       imagUrl: "assets/images/shoulder.png",
       name: "Day3-Shoulder",
     ),
+    Category(
+      imagUrl: "assets/images/biceps.png",
+      name: "Day4-Biceps",
+    ),
+    Category(
+      imagUrl: "assets/images/triceps.png",
+      name: "Day5-Triceps",
+    ),
+    Category(
+      imagUrl: "assets/images/legs.png",
+      name: "Day6-Legs",
+    ),
+    
+    
   ];
 
 class _HomepageState extends State<Homepage> {
