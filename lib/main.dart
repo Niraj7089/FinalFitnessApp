@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myflutterproject/screens/homepage.dart';
+import 'package:myflutterproject/screens/welcomeview.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'demo',
       debugShowCheckedModeBanner: false,
-      home: Homepage(),
+      home: welcomeview(),
 
 
     
