@@ -24,7 +24,7 @@ class Homepage extends StatefulWidget {
       name: "Day3-Shoulder",
     ),
     Category(
-      imagUrl: "assets/images/biceps.png",
+      imagUrl: "assets/images/bicep.png",
       name: "Day4-Biceps",
     ),
     Category(
