@@ -1,302 +1,172 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myflutterproject/screens/mode.dart';
+import 'package:myflutterproject/screens/homepage.dart';
+//import 'package:myflutterproject/screens/homepage.dart';
+//import 'package:workout_app/screens/home_view.dart';
 
-
-
-// ignore: camel_case_types
-class welcomeview extends StatefulWidget {
-  const welcomeview({ Key? key }) : super(key: key);
-
+class WelcomView extends StatefulWidget {
   @override
-  _welcomeviewState createState() => _welcomeviewState();
+  _WelcomViewState createState() => _WelcomViewState();
 }
- final List<Category> catego = [
-    Category(
-      imagUrl: "assets/images/chest.png",
-      name: "Day1-Chest",
-    ),
-    Category(
-      imagUrl: "assets/images/back.png",
-      name: "Day2-Back",
-    ),
-    Category(
-      imagUrl: "assets/images/shoulder.png",
-      name: "Day3-Shoulder",
-    ),
-    Category(
-      imagUrl: "assets/images/bicep.png",
-      name: "Day4-Biceps",
-    ),
-    Category(
-      imagUrl: "assets/images/triceps.png",
-      name: "Day5-Triceps",
-    ),
-    Category(
-      imagUrl: "assets/images/legs.png",
-      name: "Day6-Legs",
-    ),
-    
-    
-  ];
 
-// ignore: camel_case_types
-class _welcomeviewState extends State<welcomeview> {
+class _WelcomViewState extends State<WelcomView> {
+  final List levels = [
+    "inactive",
+    "Beginner",
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        width: double.infinity,
         height: double.infinity,
+        width: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/image1.png"),
+            image: AssetImage("assets/images/image2.png"),
             fit: BoxFit.cover,
           ),
         ),
-        child: Padding(
-          padding: const EdgeInsets.only(top: 60.0, left: 20),
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Text(
-                          "Welcome to",
-                          style: GoogleFonts.bebasNeue(
-                            fontSize: 32,
-                            color: Colors.white,
-                            letterSpacing: 1.8,
-                          ),
-                        ),
-                        Text(
-                          "Ragnar fitness",
-                          style: GoogleFonts.bebasNeue(
-                            fontSize: 32,
-                            color: Color(0xFF40D876),
-                            letterSpacing: 1.8,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Container(
-                      width: 42,
-                      height: 42,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(40.0),
-                        border: Border.all(
-                          width: 3,
-                          color: Color(0xFF40D876),
-                        ),
-                        image: DecorationImage(
-                          image: AssetImage("assets/images/ragnar.png"),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 50.0),
-                child: Container(
-                  width: 70,
-                  height: 70,
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(.1),
-                    borderRadius: BorderRadius.circular(40.0),
-                  ),
-                  child: Center(
-                    child: Container(
-                      height: 60,
-                      width: 60,
-                      decoration: BoxDecoration(
-                        color: Color(0xFF40D876),
-                        borderRadius: BorderRadius.circular(40.0),
-                      ),
-                      child: Center(
-                        child: Icon(
-                          Icons.play_arrow,
-                          size: 40,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 20.0, top: 50),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Text(
-                          "Find ",
-                          style: GoogleFonts.lato(
-                            fontSize: 26,
-                            color: Color(0xFF40D876),
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          "your Workout",
-                          style: GoogleFonts.lato(
-                            fontSize: 26,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Icon(
-                      Icons.filter_alt_outlined,
-                      size: 40,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 70.0),
+                  child: Text(
+                    "RAGNAR  ",
+                    style: GoogleFonts.bebasNeue(
+                      fontSize: 32,
                       color: Colors.white,
-                    )
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: Container(
-                  width: 353,
-                  height: 46,
-                  decoration: BoxDecoration(
-                    color: Color(0xFF232441),
-                    borderRadius: BorderRadius.circular(30.0),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        hintText: "SEARCH WORKOUT",
-                        hintStyle: TextStyle(
-                          color: Colors.white54,
-                        ),
-                        border: InputBorder.none,
-                        icon: Icon(
-                          Icons.search,
-                          size: 30,
-                          color: Colors.white,
-                        ),
-                      ),
+                      letterSpacing: 1.8,
                     ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Text(
-                      "Hardcore workout",
-                      style: GoogleFonts.lato(
-                        fontSize: 16,
-                        color: Colors.white,
-                      ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 70.0),
+                  child: Text(
+                    "FITNESS",
+                    style: GoogleFonts.bebasNeue(
+                      fontSize: 32,
+                      color: Color(0xFF40D876),
+                      letterSpacing: 1.8,
                     ),
-                    Text(
-                      "Cardio and abs",
-                      style: GoogleFonts.lato(
-                        fontSize: 16,
-                        color: Colors.white,
-                      ),
-                    ),
-                    Text(
-                      "Full body",
-                      style: GoogleFonts.lato(
-                        fontSize: 16,
-                        color: Colors.white,
-                      ),
-                    ),
-                    Text(
-                      "Yoga and meditation",
-                      style: GoogleFonts.lato(
-                        fontSize: 16,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: Row(
-                  children: [
-                    Text(
-                      "Hardcore workout",
-                      style: GoogleFonts.lato(
-                        fontSize: 30,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-
-            
-            Padding(
-                padding: const EdgeInsets.only(top: 40),
-                child: Container(
-                  width: double.infinity,
-                  height: 200,
-                  child: ListView.builder(
-                      itemCount: catego.length,
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (BuildContext context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                          child: Column(
-                            children: [
-                              Container(
-                                height: 172,
-                                width: 141,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage(catego[index].imagUrl),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                catego[index].name,
-                                style: TextStyle(
+              ],
+            ),
+           //container
+           
+           Container(
+             padding: EdgeInsets.all(30.0),
+             color: Colors.blue,
+             child: Text("Fitness"),
+           ),
+           GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Homepage()));
+                          },
+                          child: Container(
+                            width: 139,
+                            height: 39,
+                            decoration: BoxDecoration(
+                              color: Color(0xFF40D876),
+                              borderRadius: BorderRadius.circular(5.0),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "Next",
+                                style: GoogleFonts.lato(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
                                   color: Colors.white,
-                                  fontSize: 12,
                                 ),
                               ),
-                            ],
+                            ),
                           ),
-                        );
-                      }),
-                ),
-              )
-            ],
-          ),
+
+
+
+           ),
+           //container2
+           Container(
+             padding: EdgeInsets.all(30.0),
+             color: Colors.blue,
+             child: Text("Diet Plan"),
+           ),
+           GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Homepage()));
+                          },
+                          child: Container(
+                            width: 139,
+                            height: 39,
+                            decoration: BoxDecoration(
+                              color: Color(0xFF40D876),
+                              borderRadius: BorderRadius.circular(5.0),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "Next",
+                                style: GoogleFonts.lato(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+
+
+
+           ),
+           //container3
+           Container(
+             padding: EdgeInsets.all(30.0),
+             color: Colors.blue,
+             child: Text("corona and its updates"),
+           ),
+           GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Homepage()));
+                          },
+                          child: Container(
+                            width: 139,
+                            height: 39,
+                            decoration: BoxDecoration(
+                              color: Color(0xFF40D876),
+                              borderRadius: BorderRadius.circular(5.0),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "Next",
+                                style: GoogleFonts.lato(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+
+
+
+           ),
+
+          ],
         ),
       ),
     );
   }
 }
-
-            
-          
-            
-  
-
-
-  
-  
-
-                  

@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'demo',
       debugShowCheckedModeBanner: false,
-      home: welcomeview(),
+      home: WelcomView(),
 
 
     
